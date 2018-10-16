@@ -6,5 +6,5 @@
     "default": 47,
     "max": 47
   },
-  "mongodb": "mongodb://localhost:27017/backend/data"
+  "mongodb": "mongodb://localhost/shoes-db"
 }
