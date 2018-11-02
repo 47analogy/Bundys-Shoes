@@ -1,14 +1,36 @@
-import React, { Component } from 'react';
-import './App.css';
-import ShoeListPage from './pages/ShoeListPage'
+import React, { Component } from "react";
+
+import "./App.css";
+import { Route, NavLink } from "react-router-dom";
+import { Container } from "semantic-ui-react";
+
+// import LandingPage from './pages/LandingPage';
+import ShoeListPage from "./pages/ShoeListPage";
+import ShoeFormPage from "./pages/ShoeFormPage";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <Container>
+        {/* <div className='App'> */}
         <h1>Bundy's Shoes</h1>
-        <ShoeListPage />
-      </div>
+        <div className="ui three item menu">
+          <NavLink className="item" activeClassName="active" exact to="/">
+            Home
+          </NavLink>
+          <NavLink className="item" activeClassName="active" to="/shoe-list">
+            Shoe List
+          </NavLink>
+          <NavLink className="item" activeClassName="active" to="/shoe-form">
+            Shoe Ratings
+          </NavLink>
+        </div>
+        {/* <Route exact path='/' component={LandingPage} /> */}
+        <Route path="/shoe-list" component={ShoeListPage} />
+        <Route path="/shoe-form" component={ShoeFormPage} />
+        <Route path="/shoe-form/rate/:_id" component={ShoeFormPage} />
+        {/* </div> */}
+      </Container>
     );
   }
 }
