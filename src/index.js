@@ -1,17 +1,36 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import App from "./App";
 import "./index.css";
-import "semantic-ui-css/semantic.min.css";
 
-import { BrowserRouter as Router } from "react-router-dom";
+// TODO Remove
+// import "semantic-ui-css/semantic.min.css";
+
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+import thunk from "redux-thunk";
+
+import rootReducer from "./reducers";
+
+import App from "./App";
+import ShoeListPage from "./pages/ShoeListPage";
+import ShoeFormPage from "./pages/ShoeFormPage";
+
+export const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
-
+  <Provider store={store}>
+    <Router>
+      <div>
+        <Route exact path="/" component={App} />
+        <Route path="/shoe-list" component={ShoeListPage} />
+        <Route path="/shoe-form" component={ShoeFormPage} />
+        <Route path="/shoe-form/rate/:_id" component={ShoeFormPage} />
+      </div>
+    </Router>
+  </Provider>,
   document.getElementById("root")
 );
 

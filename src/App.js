@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 
 import "./App.css";
-import { Route, NavLink } from "react-router-dom";
+import "semantic-ui-css/semantic.min.css";
+
+import { NavLink } from "react-router-dom";
 import { Container } from "semantic-ui-react";
 
 // import LandingPage from './pages/LandingPage';
-import ShoeListPage from "./pages/ShoeListPage";
-import ShoeFormPage from "./pages/ShoeFormPage";
+// import ShoeListPage from "./pages/ShoeListPage";
+// import ShoeFormPage from "./pages/ShoeFormPage";
 
 class App extends Component {
   render() {
@@ -26,9 +28,9 @@ class App extends Component {
             </NavLink>
           </div>
           {/* <Route exact path='/' component={LandingPage} /> */}
-          <Route path="/shoe-list" component={ShoeListPage} />
+          {/* <Route path="/shoe-list" component={ShoeListPage} />
           <Route path="/shoe-form" component={ShoeFormPage} />
-          <Route path="/shoe-form/rate/:_id" component={ShoeFormPage} />
+          <Route path="/shoe-form/rate/:_id" component={ShoeFormPage} /> */}
         </div>
       </Container>
     );
