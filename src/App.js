@@ -14,6 +14,8 @@ class App extends Component {
   render() {
     return (
       <Container>
+        {/* TODO: Refactor into Nav component */}
+        {/* TODO: add LandingPage  */}
         <div className="App">
           <h1>Bundy's Shoes</h1>
           <div className="ui three item menu">
