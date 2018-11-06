@@ -12,24 +12,24 @@ class App extends Component {
   render() {
     return (
       <Container>
-        {/* <div className='App'> */}
-        <h1>Bundy's Shoes</h1>
-        <div className="ui three item menu">
-          <NavLink className="item" activeClassName="active" exact to="/">
-            Home
-          </NavLink>
-          <NavLink className="item" activeClassName="active" to="/shoe-list">
-            Shoe List
-          </NavLink>
-          <NavLink className="item" activeClassName="active" to="/shoe-form">
-            Shoe Ratings
-          </NavLink>
+        <div className="App">
+          <h1>Bundy's Shoes</h1>
+          <div className="ui three item menu">
+            <NavLink className="item" activeClassName="active" exact to="/">
+              Home
+            </NavLink>
+            <NavLink className="item" activeClassName="active" to="/shoe-list">
+              Shoe List
+            </NavLink>
+            <NavLink className="item" activeClassName="active" to="/shoe-form">
+              Shoe Ratings
+            </NavLink>
+          </div>
+          {/* <Route exact path='/' component={LandingPage} /> */}
+          <Route path="/shoe-list" component={ShoeListPage} />
+          <Route path="/shoe-form" component={ShoeFormPage} />
+          <Route path="/shoe-form/rate/:_id" component={ShoeFormPage} />
         </div>
-        {/* <Route exact path='/' component={LandingPage} /> */}
-        <Route path="/shoe-list" component={ShoeListPage} />
-        <Route path="/shoe-form" component={ShoeFormPage} />
-        <Route path="/shoe-form/rate/:_id" component={ShoeFormPage} />
-        {/* </div> */}
       </Container>
     );
   }
